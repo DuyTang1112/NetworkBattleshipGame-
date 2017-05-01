@@ -24,6 +24,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
@@ -851,11 +852,23 @@ public class ServerFrame extends JFrame {
     }
 
     public static void main(String[] args) {
-
-        ServerFrame s = new ServerFrame();
-        s.setVisible(true);
+        Object[] options = {"Server",
+            "Client"};
+        int n = JOptionPane.showOptionDialog(null,
+                "Would you like to run as server or client?",
+                "Select options",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null, //do not use a custom Icon
+                options, //the titles of buttons
+                options[0]); //default button title
+        if (n == JOptionPane.YES_OPTION) {
+            new ServerFrame().setVisible(true);
+        }
+        else if (n==JOptionPane.NO_OPTION){
+           new ClientFrame().setVisible(true);
+        }
         //System.out.println(s.decodeCoor("A2"));
-
     }
 
 }

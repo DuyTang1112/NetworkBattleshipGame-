@@ -856,10 +856,10 @@ public class ClientFrame extends JFrame {
     }
 }
 
-    public static void main(String[] args) {
-        ClientFrame s = new ClientFrame();
-        s.setVisible(true);
-        //System.out.println(s.decodeCoor("A2"));
-
-    }
+//    public static void main(String[] args) {
+//        ClientFrame s = new ClientFrame();
+//        s.setVisible(true);
+//        //System.out.println(s.decodeCoor("A2"));
+//
+//    }
 }
